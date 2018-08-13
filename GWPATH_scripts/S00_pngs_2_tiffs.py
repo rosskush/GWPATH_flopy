@@ -5,7 +5,6 @@ import geopandas as gpd
 import imageio
 import numpy as np
 
-
 png_ws = os.path.join('gwpath_images')
 
 tiff_ws = os.path.join('gwpath_rasters')
@@ -14,7 +13,7 @@ gdf = gpd.read_file(os.path.join(tiff_ws,'starting_location.shp'))
 print(gdf.crs)
 
 pngs = os.listdir(png_ws)
-pngs = [item for item in pngs if time.endswith('.PNG')]
+pngs = [item for item in pngs if item.endswith('.PNG')] # make sure the files are pngs
 print(pngs)
 
 proj4 = '+proj=aea +lat_1=27.5 +lat_2=35 +lat_0=31.25 +lon_0=-100 +x_0=1500000 +y_0=6000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs'
