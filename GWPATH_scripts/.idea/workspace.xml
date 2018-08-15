@@ -23,14 +23,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="S01_make_model_grid.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="S01_make_model_grid.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/S01_make_model_grid.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="160">
+              <caret line="10" selection-start-line="12" selection-end-line="15" selection-end-column="39" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="S02_flopy_make.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/S02_flopy_make.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="90" column="10" lean-forward="true" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -42,10 +51,11 @@
       <list>
         <option value="$PROJECT_DIR$/S00_pngs_2_tiffs.py" />
         <option value="$PROJECT_DIR$/S01_make_model_grid.py" />
+        <option value="$PROJECT_DIR$/S02_flopy_make.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -86,7 +96,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.S00_pngs_2_tiffs">
+  <component name="RunManager" selected="Python.S02_flopy_make">
     <configuration name="S00_pngs_2_tiffs" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GWPATH_scripts" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -123,14 +133,34 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="S02_flopy_make" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GWPATH_scripts" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/S02_flopy_make.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list>
       <item itemvalue="Python.S00_pngs_2_tiffs" />
       <item itemvalue="Python.S01_make_model_grid" />
+      <item itemvalue="Python.S02_flopy_make" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.S00_pngs_2_tiffs" />
+        <item itemvalue="Python.S02_flopy_make" />
         <item itemvalue="Python.S01_make_model_grid" />
+        <item itemvalue="Python.S00_pngs_2_tiffs" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +178,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
@@ -191,11 +221,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/S01_make_model_grid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="160">
+          <caret line="10" selection-start-line="12" selection-end-line="15" selection-end-column="39" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/S02_flopy_make.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="90" column="10" lean-forward="true" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
         </state>
       </provider>
     </entry>

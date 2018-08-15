@@ -21,10 +21,8 @@ Ly = 8000.
 ztop = 150.
 zbot = 0
 nlay = 1
-nrow = 50
-ncol = 50
-delr = Lx/ncol
-delc = Ly/nrow
+nrow, ncol = 100, 100
+delr, delc = int(Lx/ncol), int(Ly/nrow)
 delv = (ztop - zbot) / nlay
 botm = np.linspace(ztop, zbot, nlay + 1)
 nper = 10 # annual for 10 years, find a way to do a steady-state period and then pipe in the values
@@ -86,10 +84,10 @@ pcg = flopy.modflow.ModflowPcg(mf)
 # well 3: 3840, 4640, 500 gpm
 # well 4: 2880, 6720, 300 gpm
 # 1 gpm = 192.5 ft**3 per day
-wel1 = [0, 9, 14, -38500]
-wel2 = [0, 17, 39,  -77000]
-wel3 = [0, 28, 23,  -96250]
-wel4 = [0, 41, 17,  -57750]
+wel1 = [0, 9*2, 14*2, -38500]
+wel2 = [0, 17*2, 39*2,  -77000]
+wel3 = [0, 28*2, 23*2,  -96250]
+wel4 = [0, 41*2, 17*2,  -57750]
 wells = []
 wells2 = wells.append(wel1)
 wells2 = wells.append(wel2)
@@ -98,6 +96,8 @@ wells2 = wells.append(wel4)
 wel_spd = {0: wells, 1: wells, 2: wells, 3: wells, 4: wells, 5: wells, 6: wells, 7: wells,
            8: wells, 9: wells}
 wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd,ipakcb=53)
+wel.export(os.path.join('grid','wel.shp'))
+shutil.copy(os.path.join('grid','grid.prj'),os.path.join('grid','wel.prj'))
 
 #write the modflow input files
 mf.write_input()

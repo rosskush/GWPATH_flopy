@@ -10,8 +10,15 @@ xul, yul = 5661342.80316535942256451, 19628009.74438977241516113
 mf = flopy.modflow.Modflow('grid')
 
 
-nrow, ncol = 50, 50
-delr, delc = 160, 160
+Lx, Ly = 8000, 8000
+
+nrow, ncol = 100, 100
+delr, delc = int(Lx/ncol), int(Ly/nrow)
+
+
+
+# nrow, ncol = 50, 50
+# delr, delc = 160, 160
 
 
 dis = flopy.modflow.ModflowDis(mf,1,nrow,ncol,lenuni=1,delr=delr,delc=delc,xul=xul, yul=yul,proj4_str=proj4)
