@@ -24,17 +24,20 @@ botm = np.linspace(ztop, zbot, nlay + 1)
 nper = 10 # annual for 10 years, find a way to do a steady-state period and then pipe in the values
 perlen = 365.2
 
+dis = flopy.modflow.ModflowDis(mf, nlay, nrow, ncol, delr=delr, delc=delc, top=ztop, botm=botm[1:],nper=nper,perlen=perlen)
+
 #BAS
 ibound = np.ones((nlay, nrow, ncol), dtype=np.int32)
 ibound[:, 0, :] = -1
 ibound[:, -1, :] = -1
 strt = np.ones((nlay, nrow, ncol), dtype=np.float32)
+strt[:, :, :] = 100
 strt[:, 0, :] = 100.
-strt[:, -1, :] = 60
+strt[:, -1, :] = 60.
 bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=strt)
 
 #LPF change hydraulic conductivity here
-# how to point to the external grid values?
+
 # lpf = flopy.modflow.ModflowLpf(mf, hk=10, vka=10., ipakcb=53)
 
 #OC
@@ -55,3 +58,17 @@ wel1 = [1, 15, 10, 38500]
 wel2 = [1, 40, 18, 77000]
 wel3 = [1, 24, 29, 96250]
 wel4 = [1, 18, 42, 57750]
+wells = []
+wells2 = wells.append(wel1)
+wells2 = wells.append(wel2)
+wells2 = wells.append(wel3)
+wells2 = wells.append(wel4)
+wel_spd = {0: wells, 1: wells, 2: wells, 3: wells, 4: wells, 5: wells, 6: wells, 7: wells,
+           8: wells, 9: wells}
+wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd,ipakcb=53)
+
+#write the modflow input files
+mf.write_input()
+
+# Run the MODFLOW model
+success, buff = mf.run_model(silent=False)
