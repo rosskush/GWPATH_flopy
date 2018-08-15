@@ -31,19 +31,21 @@ dis = flopy.modflow.ModflowDis(mf, nlay, nrow, ncol, delr=delr, delc=delc, top=z
 
 # linear stepdown
 south_to_north = np.linspace(60,100,nrow)
+print(south_to_north.shape)
 
+# exit()
 
 ibound = np.ones((nlay, nrow, ncol), dtype=np.int32)
 ibound[:, 0, :] = -1
 ibound[:, -1, :] = -1
 ibound[:, :, 0] = -1
 ibound[:, :, -1] = -1
-strt = np.ones((nlay, nrow, ncol), dtype=np.float32)
+strt = np.ones((nlay, nrow, ncol), dtype=np.float32)*ztop
 strt[:, :, :] = 100
 strt[:, 0, :] = 100.
 strt[:, -1, :] = 60.
 for i in range(ncol-1):
-    south_to_north = strt[:, :, i]
+    strt[:, :, i] = south_to_north
 strt[:, :, 0] = south_to_north
 strt[:, :, -1] = south_to_north
 
