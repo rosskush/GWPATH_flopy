@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import flopy.utils.binaryfile as bf
 import os
+import geopandas as gpd
 
 modelname = 'test_3'
 exe = os.path.join('gw_codes','mf2k-chprc08spl.exe')
@@ -27,18 +28,37 @@ perlen = 365.2
 dis = flopy.modflow.ModflowDis(mf, nlay, nrow, ncol, delr=delr, delc=delc, top=ztop, botm=botm[1:],nper=nper,perlen=perlen)
 
 #BAS
+
+# linear stepdown
+south_to_north = np.linspace(60,100,nrow)
+
+
 ibound = np.ones((nlay, nrow, ncol), dtype=np.int32)
 ibound[:, 0, :] = -1
 ibound[:, -1, :] = -1
+ibound[:, :, 0] = -1
+ibound[:, :, -1] = -1
 strt = np.ones((nlay, nrow, ncol), dtype=np.float32)
 strt[:, :, :] = 100
 strt[:, 0, :] = 100.
 strt[:, -1, :] = 60.
+for i in range(ncol-1):
+    south_to_north = strt[:, :, i]
+strt[:, :, 0] = south_to_north
+strt[:, :, -1] = south_to_north
+
 bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=strt)
 
 #LPF change hydraulic conductivity here
-
-# lpf = flopy.modflow.ModflowLpf(mf, hk=10, vka=10., ipakcb=53)
+gdf = gpd.read_file(os.path.join('grid_hk','grid_hk.shp'))
+hk_array = np.ones((nlay, nrow, ncol), dtype=np.int32)
+for i in range(len(gdf)):
+    r = gdf.iloc[i]['row']
+    c = gdf.iloc[i]['column']
+    val = gdf.iloc[i]['Hk']
+    hk_array[0][r-1, c-1] = val
+print(hk_array)
+lpf = flopy.modflow.ModflowLpf(mf, hk=hk_array, vka=hk_array, ipakcb=53)
 
 #OC
 spd = {}
@@ -54,10 +74,10 @@ pcg = flopy.modflow.ModflowPcg(mf)
 # well 3: 3840, 4640, 500 gpm
 # well 4: 2880, 6720, 300 gpm
 # 1 gpm = 192.5 ft**3 per day
-wel1 = [1, 15, 10, 38500]
-wel2 = [1, 40, 18, 77000]
-wel3 = [1, 24, 29, 96250]
-wel4 = [1, 18, 42, 57750]
+wel1 = [0, 9, 14, -38500]
+wel2 = [0, 17, 39,  -77000]
+wel3 = [0, 28, 23,  -96250]
+wel4 = [0, 41, 17,  -57750]
 wells = []
 wells2 = wells.append(wel1)
 wells2 = wells.append(wel2)
