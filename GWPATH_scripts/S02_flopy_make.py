@@ -30,7 +30,7 @@ dis = flopy.modflow.ModflowDis(mf, nlay, nrow, ncol, delr=delr, delc=delc, top=z
 #BAS
 
 # linear stepdown
-south_to_north = np.linspace(60,100,nrow)
+south_to_north = np.linspace(100,60,nrow)
 print(south_to_north.shape)
 
 # exit()
@@ -49,6 +49,12 @@ for i in range(ncol-1):
 strt[:, :, 0] = south_to_north
 strt[:, :, -1] = south_to_north
 
+fig, ax = plt.subplots()
+plt.imshow(strt[0])
+plt.colorbar()
+plt.show()
+
+exit()
 bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=strt)
 
 #LPF change hydraulic conductivity here
