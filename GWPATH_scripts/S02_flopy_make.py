@@ -4,11 +4,16 @@ import matplotlib.pyplot as plt
 import flopy.utils.binaryfile as bf
 import os
 import geopandas as gpd
+import shutil
 
 modelname = 'test_3'
 exe = os.path.join('gw_codes','mf2k-chprc08spl.exe')
 model_ws = os.path.join('workspace')
 mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=model_ws)
+
+proj4 = '+proj=aea +lat_1=27.5 +lat_2=35 +lat_0=31.25 +lon_0=-100 +x_0=1500000 +y_0=6000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs'
+xul, yul = 5661342.80316535942256451, 19628009.74438977241516113
+
 
 #DIS
 Lx = 8000.
@@ -25,7 +30,7 @@ botm = np.linspace(ztop, zbot, nlay + 1)
 nper = 10 # annual for 10 years, find a way to do a steady-state period and then pipe in the values
 perlen = 365.2
 
-dis = flopy.modflow.ModflowDis(mf, nlay, nrow, ncol, delr=delr, delc=delc, top=ztop, botm=botm[1:],nper=nper,perlen=perlen)
+dis = flopy.modflow.ModflowDis(mf, nlay, nrow, ncol, delr=delr, delc=delc, top=ztop, botm=botm[1:],nper=nper,perlen=perlen,xul=xul,yul=yul,proj4_str=proj4,lenuni=1)
 
 #BAS
 
@@ -52,11 +57,10 @@ strt[:, :, -1] = south_to_north
 fig, ax = plt.subplots()
 plt.imshow(strt[0])
 plt.colorbar()
-plt.show()
 
-exit()
 bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=strt)
-
+bas.export(os.path.join('grid','bas.shp'))
+shutil.copy(os.path.join('grid','grid.prj'),os.path.join('grid','bas.prj'))
 #LPF change hydraulic conductivity here
 gdf = gpd.read_file(os.path.join('grid_hk','grid_hk.shp'))
 hk_array = np.ones((nlay, nrow, ncol), dtype=np.int32)
@@ -100,3 +104,9 @@ mf.write_input()
 
 # Run the MODFLOW model
 success, buff = mf.run_model(silent=False)
+
+
+mf.plot()
+
+
+plt.show()
