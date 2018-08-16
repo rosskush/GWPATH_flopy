@@ -12,7 +12,7 @@ mf = flopy.modflow.Modflow('grid')
 
 Lx, Ly = 8000, 8000
 
-nrow, ncol = 100, 100
+nrow, ncol = 200, 200
 delr, delc = int(Lx/ncol), int(Ly/nrow)
 
 

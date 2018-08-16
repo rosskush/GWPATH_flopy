@@ -26,8 +26,8 @@
       <file leaf-file-name="S01_make_model_grid.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/S01_make_model_grid.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" selection-start-line="12" selection-end-line="15" selection-end-column="39" />
+            <state relative-caret-position="323">
+              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -38,18 +38,64 @@
       <file leaf-file-name="S02_flopy_make.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/S02_flopy_make.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="90" column="10" lean-forward="true" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
+            <state relative-caret-position="375">
+              <caret line="132" column="75" lean-forward="true" selection-start-line="132" selection-start-column="75" selection-end-line="132" selection-end-column="75" />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="reference.py" pinned="false" current-in-tab="false">
+        <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/utils/reference.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="860">
+              <caret line="1169" selection-start-line="1169" selection-end-line="1169" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shapefile_utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/export/shapefile_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1540">
+              <caret line="448" column="32" selection-start-line="448" selection-start-column="29" selection-end-line="448" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="S03_modpath.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/S03_modpath.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>*2</find>
+      <find>recarray2shp</find>
+      <find>*2+1</find>
+      <find>*4+1</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>*1</replace>
+      <replace>*2+1</replace>
+      <replace>*4+1</replace>
+      <replace>*4+3</replace>
+    </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/S00_pngs_2_tiffs.py" />
+        <option value="$PROJECT_DIR$/S03_modpath.py" />
+        <option value="H:/Miniconda3/Lib/site-packages/flopy/export/shapefile_utils.py" />
         <option value="$PROJECT_DIR$/S01_make_model_grid.py" />
         <option value="$PROJECT_DIR$/S02_flopy_make.py" />
       </list>
@@ -219,10 +265,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/S03_modpath.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/shutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/export/shapefile_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1540">
+          <caret line="448" column="32" selection-start-line="448" selection-start-column="29" selection-end-line="448" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/utils/reference.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="860">
+          <caret line="1169" selection-start-line="1169" selection-end-line="1169" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/S01_make_model_grid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" selection-start-line="12" selection-end-line="15" selection-end-column="39" />
+        <state relative-caret-position="323">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
@@ -231,8 +301,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/S02_flopy_make.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="90" column="10" lean-forward="true" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
+        <state relative-caret-position="375">
+          <caret line="132" column="75" lean-forward="true" selection-start-line="132" selection-start-column="75" selection-end-line="132" selection-end-column="75" />
         </state>
       </provider>
     </entry>
