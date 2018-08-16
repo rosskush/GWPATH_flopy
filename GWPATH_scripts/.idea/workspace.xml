@@ -26,8 +26,8 @@
       <file leaf-file-name="S01_make_model_grid.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/S01_make_model_grid.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+            <state relative-caret-position="408">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -38,8 +38,8 @@
       <file leaf-file-name="S02_flopy_make.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/S02_flopy_make.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="132" column="75" lean-forward="true" selection-start-line="132" selection-start-column="75" selection-end-line="132" selection-end-column="75" />
+            <state relative-caret-position="358">
+              <caret line="150" column="44" lean-forward="true" selection-start-line="150" selection-start-column="44" selection-end-line="150" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -82,12 +82,15 @@
       <find>recarray2shp</find>
       <find>*2+1</find>
       <find>*4+1</find>
+      <find>-1</find>
     </findStrings>
     <replaceStrings>
       <replace>*1</replace>
       <replace>*2+1</replace>
       <replace>*4+1</replace>
       <replace>*4+3</replace>
+      <replace>-0</replace>
+      <replace>+1</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -291,8 +294,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/S01_make_model_grid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="408">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
@@ -301,8 +304,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/S02_flopy_make.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="132" column="75" lean-forward="true" selection-start-line="132" selection-start-column="75" selection-end-line="132" selection-end-column="75" />
+        <state relative-caret-position="358">
+          <caret line="150" column="44" lean-forward="true" selection-start-line="150" selection-start-column="44" selection-end-line="150" selection-end-column="44" />
         </state>
       </provider>
     </entry>

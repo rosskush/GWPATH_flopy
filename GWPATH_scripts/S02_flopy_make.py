@@ -11,25 +11,27 @@ exe = os.path.join('gw_codes','mf2k-chprc08spl.exe')
 model_ws = os.path.join('workspace')
 mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=model_ws)
 
+offset = 160/2
 proj4 = '+proj=aea +lat_1=27.5 +lat_2=35 +lat_0=31.25 +lon_0=-100 +x_0=1500000 +y_0=6000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs'
-xul, yul = 5661342.80316535942256451, 19628009.74438977241516113
+xul, yul = 5661342.80316535942256451 - offset, 19628009.74438977241516113 + offset
 
 # hondo = 100 X 100 grids
 hondo = False
-hondo2 = True
+hondo2 = False
+fitty = False
 
 #DIS
-Lx = 8000.
-Ly = 8000.
+Lx = 8000. + 160
+Ly = 8000. + 160
 ztop = 150.
 zbot = 0
 nlay = 1
 if hondo:
-    nrow, ncol = 100, 100
+    nrow, ncol = 101, 101
 elif hondo2:
-    nrow, ncol = 200, 200
+    nrow, ncol = 201, 201
 else:
-    nrow,ncol = 50,50
+    nrow,ncol = 51,51
 delr, delc = int(Lx/ncol), int(Ly/nrow)
 delv = (ztop - zbot) / nlay
 botm = np.linspace(ztop, zbot, nlay + 1)
@@ -50,8 +52,8 @@ south_to_north = np.linspace(100,60,nrow)
 ibound = np.ones((nlay, nrow, ncol), dtype=np.int32)
 ibound[:, 0, :] = -1
 ibound[:, -1, :] = -1
-ibound[:, :, 0] = -1
-ibound[:, :, -1] = -1
+ibound[:, :, 0] = -1 # left side
+ibound[:, :, -1] = -1 # right side
 strt = np.ones((nlay, nrow, ncol), dtype=np.float32)*ztop
 strt[:, :, :] = 100
 strt[:, 0, :] = 100.
@@ -61,28 +63,45 @@ for i in range(ncol-1):
 strt[:, :, 0] = south_to_north
 strt[:, :, -1] = south_to_north
 
-
+# fig, ax = plt.subplots()
+# plt.imshow(strt[0],cmap='jet')
+# plt.colorbar()
+#
+# plt.show()
+# exit()
 
 bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=strt)
-# bas.export(os.path.join('grid','bas.shp'))
-# shutil.copy(os.path.join('grid','grid.prj'),os.path.join('grid','bas.prj'))
+bas.export(os.path.join('grid','bas.shp'))
+shutil.copy(os.path.join('grid','grid.prj'),os.path.join('grid','bas.prj'))
+
+# ghb_spd = {}
+# spd = []
+# for row in range(nrow):
+#     stage = strt[0][row,0]
+#     spd.append([0,row,0,stage,500])
+#     spd.append([0,row,ncol-1,stage,500])
+#
+#
+# ghb_spd[0] = spd
+# ghb = flopy.modflow.ModflowGhb(mf,stress_period_data=ghb_spd,ipakcb=53)
 
 #LPF change hydraulic conductivity here
-if hondo:
-    gdf = gpd.read_file(os.path.join('grid_hk','grid_hk.shp'))
-elif hondo2:
-    gdf = gpd.read_file(os.path.join('grid_hk','grid_hk_200.shp'))
 
-else:
-    gdf = gpd.read_file(os.path.join('grid_hk','grid_hk_50.shp'))
+hk_gdf = gpd.read_file(os.path.join('gwpath_digitized','fig_20_block_hk_polygon.shp'))
+grid_gdf = gpd.read_file(os.path.join('grid',f'grid_offset_{nrow}.shp'))
+
+gdf = gpd.sjoin(hk_gdf,grid_gdf) # spatial join for the win
 
 hk_array = np.ones((nlay, nrow, ncol), dtype=np.int32)
 for i in range(len(gdf)):
     r = gdf.iloc[i]['row']
     c = gdf.iloc[i]['column']
-    val = gdf.iloc[i]['hk']
+    val = gdf.iloc[i]['Hk']
     hk_array[0][r-1, c-1] = val
-print(hk_array)
+hk_array[0][:,0] = hk_array[0][:,1]
+hk_array[0][0,:] = hk_array[0][1,:]
+
+# print(hk_array)
 lpf = flopy.modflow.ModflowLpf(mf, hk=hk_array, vka=hk_array, ipakcb=53)
 lpf.hk.plot()
 #OC
@@ -103,20 +122,20 @@ pcg = flopy.modflow.ModflowPcg(mf)
 gpm2cfd = 192.5
 
 if hondo:
-    wel1 = [0, 9*2+1, 14*2+1, -200*gpm2cfd]
-    wel2 = [0, 17*2+1, 39*2+1,  -400*gpm2cfd]
-    wel3 = [0, 28*2+1, 23*2+1,  -500*gpm2cfd]
-    wel4 = [0, 41*2+1, 17*2+1,  -300*gpm2cfd]
+    wel1 = [0, 9*2+2, 14*2+2, -200*gpm2cfd]
+    wel2 = [0, 17*2+2, 39*2+2,  -400*gpm2cfd]
+    wel3 = [0, 28*2+2, 23*2+2,  -500*gpm2cfd]
+    wel4 = [0, 41*2+2, 17*2+2,  -300*gpm2cfd]
 elif hondo2:
-    wel1 = [0, 9*4+3, 14*4+3, -200*gpm2cfd]
-    wel2 = [0, 17*4+3, 39*4+3,  -400*gpm2cfd]
-    wel3 = [0, 28*4+3, 23*4+3,  -500*gpm2cfd]
-    wel4 = [0, 41*4+3, 17*4+3,  -300*gpm2cfd]
+    wel1 = [0, 9*4+2, 14*4+2, -200*gpm2cfd]
+    wel2 = [0, 17*4+2, 39*4+2,  -400*gpm2cfd]
+    wel3 = [0, 28*4+2, 23*4+2,  -500*gpm2cfd]
+    wel4 = [0, 41*4+2, 17*4+2,  -300*gpm2cfd]
 else:
-    wel1 = [0, 9, 14, -200*gpm2cfd]
-    wel2 = [0, 17, 39,  -400*gpm2cfd]
-    wel3 = [0, 28, 23,  -500*gpm2cfd]
-    wel4 = [0, 41, 17,  -300*gpm2cfd]
+    wel1 = [0, 9+1, 14+1, -200*gpm2cfd]
+    wel2 = [0, 17+1, 39+1,  -400*gpm2cfd]
+    wel3 = [0, 28+1, 23+1,  -500*gpm2cfd]
+    wel4 = [0, 41+1, 17+1,  -300*gpm2cfd]
 
 # wells = []
 # wells2 = wells.append(wel1)
