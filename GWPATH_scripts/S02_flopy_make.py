@@ -65,7 +65,7 @@ hk_array = np.ones((nlay, nrow, ncol), dtype=np.int32)
 for i in range(len(gdf)):
     r = gdf.iloc[i]['row']
     c = gdf.iloc[i]['column']
-    val = gdf.iloc[i]['Hk']
+    val = gdf.iloc[i]['hk']
     hk_array[0][r-1, c-1] = val
 print(hk_array)
 lpf = flopy.modflow.ModflowLpf(mf, hk=hk_array, vka=hk_array, ipakcb=53)
