@@ -4,8 +4,10 @@ import numpy as np
 import geopandas
 from shapely.geometry import Point
 from flopy.utils.reference import SpatialReference
+import flopy.utils.binaryfile as bf
 import shutil
 import flopy
+import matplotlib.pyplot as plt
 
 # hundo = 100 X 100 grids
 hundo = False
@@ -14,7 +16,8 @@ halfhundo = True
 
 
 model_ws = os.path.join('workspace')
-mf = flopy.modflow.Modflow.load('test_3'+'.nam',model_ws=model_ws)
+modelname = 'test_3'
+mf = flopy.modflow.Modflow.load(modelname+'.nam',model_ws=model_ws)
 # DIS
 Lx = 8000. + 160.
 Ly = 8000. + 160.
@@ -66,7 +69,9 @@ circle = pd.DataFrame({'x': xcirc, 'y': ycirc})
 circle['ModelX'] = circle['x'] - xul
 circle['ModelY'] = yul - circle['y']
 rows, cols = sr.get_rc(circle['x'].tolist(), circle['y'].tolist())
-circle['Row'], circle['Column'] = rows.tolist(), cols.tolist()
+circle['Row'], circle['Column'] = rows, cols
+
+
 
 # todo get the local coordinates
 def calc_local_x(delr, col, x):
@@ -104,6 +109,8 @@ df['Layer'] = 1
 df['LocalZ'] = .5
 df['ReleaseTime'] = 0
 df['Label'] = 'GP01'
+df['Row'] += 1 # for writing starting loc
+df['Column'] += 1
 df = df[['ParticleID', 'GroupNumber', 'Grid', 'Layer', 'Row', 'Column', 'LocalX', 'LocalY', 'LocalZ', 'ReleaseTime','Label', 'x', 'y']]
 df.to_csv(os.path.join(model_ws,'starting_locs.csv'), index=False)
 
@@ -133,4 +140,47 @@ starting_loc = os.path.join(model_ws,'starting_pts.loc')
 
 write_loc_file(starting_loc,starting_csv=os.path.join(model_ws,'starting_locs.csv'))
 
+mp6_exe = os.path.join('gw_codes','mp6.exe')
 
+mp = flopy.modpath.Modpath('test_3',exe_name=mp6_exe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
+mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
+mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity =.25) # make modpath bas object
+
+sim = mp.create_mpsim(trackdir='backward', simtype='pathline', packages='starting_pts.loc',
+                      start_time=(0, 0, 0))  # create simulation file
+
+mp.write_input()
+mp.run_model(silent=False)
+
+cbb = bf.CellBudgetFile(os.path.join(model_ws,modelname+'.cbc'))
+
+
+pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test_3.mppth')) # create pathline object
+epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test_3.mpend')) # create endpoint object
+
+fig, ax = plt.subplots()
+
+hds = bf.HeadFile(os.path.join(model_ws,modelname+'.hds'))
+times = hds.get_times()
+head = hds.get_data(totim=times[-1])
+levels = np.linspace(0, 10, 11)
+
+frf = cbb.get_data(text='FLOW RIGHT FACE', totim=times[-1])[0]
+fff = cbb.get_data(text='FLOW FRONT FACE', totim=times[-1])[0]
+
+modelmap = flopy.plot.ModelMap(model=mf, layer=0)
+qm = modelmap.plot_ibound()
+lc = modelmap.plot_grid()
+
+quiver = modelmap.plot_discharge(frf, fff, head=head)
+
+well_epd = epdobj.get_alldata()
+well_pathlines = pthobj.get_alldata()
+
+print(times)
+
+modelmap.plot_pathline(well_pathlines, travel_time='< 3652', layer='all', colors='red') # plot pathline <= time
+modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
+modelmap.plot_bc('wel',color='k')
+
+plt.show()

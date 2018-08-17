@@ -26,8 +26,8 @@
       <file leaf-file-name="S01_make_model_grid.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/S01_make_model_grid.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="5" column="24" selection-start-line="5" selection-end-line="6" />
+            <state relative-caret-position="109">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -38,26 +38,38 @@
       <file leaf-file-name="S02_flopy_make.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/S02_flopy_make.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="164" selection-start-line="164" selection-end-line="164" />
+            <state relative-caret-position="-1275">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="S03_modpath.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="S03_modpath.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/S03_modpath.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="279">
+              <caret line="149" column="42" selection-start-line="149" selection-start-column="42" selection-end-line="149" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mf.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mp.py" pinned="false" current-in-tab="false">
+        <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="345" selection-start-line="345" selection-end-line="345" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mf.py" pinned="false" current-in-tab="false">
         <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modflow/mf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="576" column="32" selection-start-line="576" selection-start-column="32" selection-end-line="576" selection-end-column="32" />
+            <state relative-caret-position="248">
+              <caret line="573" column="31" selection-start-line="573" selection-start-column="31" selection-end-line="573" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -78,8 +90,9 @@
       <find>*2+1</find>
       <find>*4+1</find>
       <find>-1</find>
-      <find>+3</find>
       <find>unitnumber</find>
+      <find>glo</find>
+      <find>+3</find>
     </findStrings>
     <replaceStrings>
       <replace>*1</replace>
@@ -97,9 +110,9 @@
         <option value="$PROJECT_DIR$/S00_pngs_2_tiffs.py" />
         <option value="H:/Miniconda3/Lib/site-packages/flopy/export/shapefile_utils.py" />
         <option value="$PROJECT_DIR$/S01_make_model_grid.py" />
+        <option value="H:/Miniconda3/Lib/site-packages/flopy/modflow/mf.py" />
         <option value="$PROJECT_DIR$/S02_flopy_make.py" />
         <option value="$PROJECT_DIR$/S03_modpath.py" />
-        <option value="H:/Miniconda3/Lib/site-packages/flopy/modflow/mf.py" />
       </list>
     </option>
   </component>
@@ -308,34 +321,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modflow/mf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="573" column="31" selection-start-line="573" selection-start-column="31" selection-end-line="573" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/S01_make_model_grid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="5" column="24" selection-start-line="5" selection-end-line="6" />
+        <state relative-caret-position="109">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="345" selection-start-line="345" selection-end-line="345" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/S02_flopy_make.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="164" selection-start-line="164" selection-end-line="164" />
+        <state relative-caret-position="-1275">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/S03_modpath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modflow/mf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="576" column="32" selection-start-line="576" selection-start-column="32" selection-end-line="576" selection-end-column="32" />
+        <state relative-caret-position="279">
+          <caret line="149" column="42" selection-start-line="149" selection-start-column="42" selection-end-line="149" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
