@@ -64,3 +64,9 @@ period 10 step 1
   save head
   save budget
 
+period 11 step 1 
+  print head
+  print budget
+  save head
+  save budget
+

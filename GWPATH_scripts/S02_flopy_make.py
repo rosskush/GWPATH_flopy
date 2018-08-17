@@ -35,8 +35,8 @@ else:
 delr, delc = int(Lx/ncol), int(Ly/nrow)
 delv = (ztop - zbot) / nlay
 botm = np.linspace(ztop, zbot, nlay + 1)
-nper = 10 # annual for 10 years, find a way to do a steady-state period and then pipe in the values
-perlen = 365.2
+nper = 11 # annual for 10 years, find a way to do a steady-state period and then pipe in the values
+perlen = 365.25
 
 dis = flopy.modflow.ModflowDis(mf, nlay, nrow, ncol, delr=delr, delc=delc, top=ztop, botm=botm[1:],nper=nper,perlen=perlen,xul=xul,yul=yul,proj4_str=proj4,lenuni=1)
 

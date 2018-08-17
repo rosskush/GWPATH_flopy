@@ -146,8 +146,11 @@ mp = flopy.modpath.Modpath('test_3',exe_name=mp6_exe,modflowmodel=mf,model_ws=mo
 mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
 mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity =.25) # make modpath bas object
 
-sim = mp.create_mpsim(trackdir='backward', simtype='pathline', packages='starting_pts.loc',
-                      start_time=(0, 0, 0))  # create simulation file
+# sim = mp.create_mpsim(trackdir='backward', simtype='pathline', packages='starting_pts.loc',
+#                       start_time=(0, 0, 0),stop_time=3652.)  # create simulation file
+
+# the stop_time is very finicky,
+sim = flopy.modpath.ModpathSim(mp,mp.nam,mp.lst,option_flags=[2,2,2,1,2,3,2,3,1,1,1,1],stop_time=3650,strt_file='starting_pts.loc',time_pts=np.arange(365.2,3652.1,365.2),time_ct=10)
 
 mp.write_input()
 mp.run_model(silent=False)
@@ -179,8 +182,8 @@ well_pathlines = pthobj.get_alldata()
 
 print(times)
 
-modelmap.plot_pathline(well_pathlines, travel_time='< 3652', layer='all', colors='red') # plot pathline <= time
-modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
+modelmap.plot_pathline(well_pathlines, travel_time='< 7300', layer='all', colors='red') # plot pathline <= time
+modelmap.plot_endpoint(well_epd, direction='ending', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
 modelmap.plot_bc('wel',color='k')
 
 plt.show()
