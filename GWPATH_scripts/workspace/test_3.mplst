@@ -183,17 +183,16 @@ PARTICLE OUTPUT FILES:
 ENDPOINT FILE:  test_3.mpend                                                                                                                                                                                            
 PATHLINE FILE:  test_3.mppth                                                                                                                                                                                            
  
-REFERENCE TIME CALCULATED FOR: KPER =     1  KSTP =     1  RELATIVE POSITION WITHIN TIME STEP = 1.0000000
-COMPUTED REFERENCE TIME =   0.3652500E+03
-SPECIFY A LIMIT FOR TRACKING TIME (ISTOPT =  3)
-STOP TIME =   0.3650000E+04
+REFERENCE TIME CALCULATED FOR: KPER =     1  KSTP =     1  RELATIVE POSITION WITHIN TIME STEP = 0.0000000
+COMPUTED REFERENCE TIME =   0.0000000E+00
+EXTEND INITIAL OR FINAL STEADY-STATE TIMESTEP AND CONTINUE TRACKING (ISTOPT =  2)
  Particle starting locations will be read from file:                                                                                                                                                     starting_pts.loc                                                                                                                                                                                        
    Starting locations file format option (ISLFOPT) =                                                                                                                                                        1
  
 TOTAL NUMBER OF PARTICLES FOR ALL GROUPS =        100
  
-    10Time points will be read from a list.
-    0.36520E+03    0.73040E+03    0.10956E+04    0.14608E+04    0.18260E+04    0.21912E+04    0.25564E+04    0.29216E+04    0.32868E+04    0.36520E+04
+     1Time points will be read from a list.
+    0.10000E+01
  
 DO NOT PERFORM BUDGET CHECKS (IBDOPT =  1)
  
@@ -216,3 +215,15 @@ Processing Time Step     1 Period     1.  Time =  3.65250E+02                   
  Reading FLOW FRONT FACE  for Period    1   Time Step    1
  Reading            WELLS for Period    1   Time Step    1
       IFACE values will be read from a compact budget list.
+ 
+Particle summary:
+-----------------
+         0 particles remain active
+       100 particles terminated in zone    1
+         0 particles were stranded
+ 
+Default real number precision =         15
+Heads input from single-precision head file.
+Flows input from single-precision compact budget file.
+ 
+End of MODPATH simulation. Normal termination.

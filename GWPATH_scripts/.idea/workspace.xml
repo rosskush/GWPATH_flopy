@@ -10,12 +10,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="S00_pngs_2_tiffs.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/S00_pngs_2_tiffs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
+            <state relative-caret-position="313">
+              <caret line="25" column="97" selection-start-line="25" selection-start-column="97" selection-end-line="25" selection-end-column="97" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -26,8 +26,8 @@
       <file leaf-file-name="S01_make_model_grid.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/S01_make_model_grid.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="340">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -35,11 +35,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="runme.bat" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/runme.bat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="S02_flopy_make.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/S02_flopy_make.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+            <state relative-caret-position="265">
+              <caret line="96" column="45" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,8 +59,8 @@
       <file leaf-file-name="S03_modpath.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/S03_modpath.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="19" column="67" lean-forward="true" selection-start-line="17" selection-end-line="19" selection-end-column="67" />
+            <state relative-caret-position="1683">
+              <caret line="99" selection-start-line="99" selection-end-line="99" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -56,23 +68,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="S04_read_timeseries.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="S04_read_timeseries.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/S04_read_timeseries.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="1309">
+              <caret line="77" column="53" selection-start-line="77" selection-end-line="78" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="S03_convex_hull.py" pinned="false" current-in-tab="false">
-        <entry file="file://S:/ABQ/BWSHI_C001_REDHILL/T5_Communication_Meetings/GW_modeling_group_meetings/Meeting_8_February_12_2018/red_hill_python/S03_convex_hull.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -80,8 +83,17 @@
       <file leaf-file-name="mp.py" pinned="false" current-in-tab="false">
         <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+            <state relative-caret-position="323">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mfoc.py" pinned="false" current-in-tab="false">
+        <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modflow/mfoc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="151" column="28" selection-start-line="151" selection-start-column="28" selection-end-line="151" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -89,17 +101,8 @@
       <file leaf-file-name="mpsim.py" pinned="false" current-in-tab="false">
         <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mpsim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="3995">
               <caret line="237" column="30" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mf.py" pinned="false" current-in-tab="false">
-        <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modflow/mf.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="573" column="31" selection-start-line="573" selection-start-column="31" selection-end-line="573" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -128,6 +131,9 @@
       <find>+3</find>
       <find>['TimePointOption'] == 3</find>
       <find>itp</find>
+      <find>convex</find>
+      <find>geopandas</find>
+      <find>gpd</find>
     </findStrings>
     <replaceStrings>
       <replace>*1</replace>
@@ -142,20 +148,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/S00_pngs_2_tiffs.py" />
         <option value="H:/Miniconda3/Lib/site-packages/flopy/export/shapefile_utils.py" />
         <option value="$PROJECT_DIR$/S01_make_model_grid.py" />
         <option value="H:/Miniconda3/Lib/site-packages/flopy/modflow/mf.py" />
         <option value="H:/Miniconda3/Lib/site-packages/flopy/modpath/mp.py" />
-        <option value="$PROJECT_DIR$/S02_flopy_make.py" />
+        <option value="$PROJECT_DIR$/S00_pngs_2_tiffs.py" />
         <option value="$PROJECT_DIR$/S03_modpath.py" />
+        <option value="$PROJECT_DIR$/S02_flopy_make.py" />
         <option value="$PROJECT_DIR$/S04_read_timeseries.py" />
+        <option value="$PROJECT_DIR$/runme.bat" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-80" />
+    <option name="y" value="28" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -164,6 +171,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,7 +183,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -295,10 +302,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.S04_read_timeseries" />
-        <item itemvalue="Python.S03_modpath" />
         <item itemvalue="Python.S02_flopy_make" />
-        <item itemvalue="Python.S01_make_model_grid" />
+        <item itemvalue="Python.S03_modpath" />
         <item itemvalue="Python.S00_pngs_2_tiffs" />
+        <item itemvalue="Python.S01_make_model_grid" />
       </list>
     </recent_temporary>
   </component>
@@ -321,21 +328,21 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32897604" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -349,10 +356,78 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/S00_pngs_2_tiffs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
+        <state relative-caret-position="391">
           <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/S01_make_model_grid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/S02_flopy_make.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/S03_modpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" column="67" selection-start-line="17" selection-end-line="19" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://S:/ABQ/BWSHI_C001_REDHILL/T5_Communication_Meetings/GW_modeling_group_meetings/Meeting_8_February_12_2018/red_hill_python/S03_convex_hull.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="12" selection-start-line="21" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mpsim.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3995">
+          <caret line="237" column="30" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modflow/mf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9639">
+          <caret line="573" column="31" selection-start-line="573" selection-start-column="31" selection-end-line="573" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/S04_read_timeseries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -380,66 +455,100 @@
     </entry>
     <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modflow/mf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
+        <state relative-caret-position="9639">
           <caret line="573" column="31" selection-start-line="573" selection-start-column="31" selection-end-line="573" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/S01_make_model_grid.py">
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mpsim.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="3995">
+          <caret line="237" column="30" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="4518" column="16" selection-start-line="4518" selection-start-column="16" selection-end-line="4518" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modflow/mfoc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="151" column="28" selection-start-line="151" selection-start-column="28" selection-end-line="151" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/S03_modpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1683">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/S02_flopy_make.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mpsim.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="237" column="30" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/S03_modpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="67" lean-forward="true" selection-start-line="17" selection-end-line="19" selection-end-column="67" />
+        <state relative-caret-position="265">
+          <caret line="96" column="45" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/S00_pngs_2_tiffs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="25" column="97" selection-start-line="25" selection-start-column="97" selection-end-line="25" selection-end-column="97" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/S01_make_model_grid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://S:/ABQ/BWSHI_C001_REDHILL/T5_Communication_Meetings/GW_modeling_group_meetings/Meeting_8_February_12_2018/red_hill_python/S03_convex_hull.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-end-line="22" />
+        <state relative-caret-position="340">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/S04_read_timeseries.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="1309">
+          <caret line="77" column="53" selection-start-line="77" selection-end-line="78" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runme.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>

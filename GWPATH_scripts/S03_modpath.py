@@ -40,12 +40,11 @@ perlen = 365.2
 offset = 160 / 2
 proj4 = '+proj=aea +lat_1=27.5 +lat_2=35 +lat_0=31.25 +lon_0=-100 +x_0=1500000 +y_0=6000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs'
 xul, yul = 5661342.80316535942256451 - offset, 19628009.74438977241516113 + offset
-
 # get the row/column!
 delcl = np.ones(nrow) * (int(Lx / ncol))
 delrl = delcl
 sr = SpatialReference(delr=delrl, delc=delcl, xul=xul, yul=yul)
-
+mf.sr = sr
 yll = yul - 8000.  # measure from the bottom up
 well3x = 3840. + offset
 well3y = 8000. - 4640. - offset  # measure from the bottom up
@@ -96,8 +95,8 @@ circle['LocalY'] = circle.apply(lambda xy: calc_local_y(delc, xy['Row'], xy['Mod
 circle['cirque'] = circle.apply(lambda x: Point((float(x.x), float(x.y))), axis=1)
 circle = geopandas.GeoDataFrame(circle, geometry='cirque')
 proj4 = '+proj=aea +lat_1=27.5 +lat_2=35 +lat_0=31.25 +lon_0=-100 +x_0=1500000 +y_0=6000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs'
-circle.to_file(os.path.join('shapefiles', 'starting_circle.shp'), driver='ESRI Shapefile')
-shutil.copy(os.path.join('grid', 'grid.prj'), os.path.join('shapefiles', 'starting_circle.prj'))
+# circle.to_file(os.path.join('shapefiles', 'starting_circle.shp'), driver='ESRI Shapefile')
+# shutil.copy(os.path.join('grid', 'grid.prj'), os.path.join('shapefiles', 'starting_circle.prj'))
 
 
 # back to normal pandas
@@ -146,11 +145,11 @@ mp = flopy.modpath.Modpath('test_3',exe_name=mp6_exe,modflowmodel=mf,model_ws=mo
 mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
 mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity =.25) # make modpath bas object
 
-# sim = mp.create_mpsim(trackdir='backward', simtype='pathline', packages='starting_pts.loc',
-#                       start_time=(0, 0, 0),stop_time=3652.)  # create simulation file
+sim = mp.create_mpsim(trackdir='backward', simtype='pathline', packages='starting_pts.loc',
+                      start_time=(0, 0, 0),stop_time=3652.)  # create simulation file
 
 # the stop_time is very finicky,
-sim = flopy.modpath.ModpathSim(mp,mp.nam,mp.lst,option_flags=[2,2,2,1,2,3,2,3,1,1,1,1],stop_time=3650,strt_file='starting_pts.loc',time_pts=np.arange(365.2,3652.1,365.2),time_ct=10)
+# sim = flopy.modpath.ModpathSim(mp,mp.nam,mp.lst,option_flags=[2,2,2,1,2,3,2,3,1,1,1,1],stop_time=3650,strt_file='starting_pts.loc',time_pts=np.arange(365.2,3652.1,365.2),time_ct=10)
 
 mp.write_input()
 mp.run_model(silent=False)

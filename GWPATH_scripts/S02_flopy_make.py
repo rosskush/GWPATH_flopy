@@ -9,6 +9,8 @@ import shutil
 modelname = 'test_3'
 exe = os.path.join('gw_codes','mf2k-chprc08spl.exe')
 model_ws = os.path.join('workspace')
+if not os.path.exists(model_ws): os.mkdir(model_ws)
+
 mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=model_ws)
 
 offset = 160/2
@@ -18,7 +20,7 @@ xul, yul = 5661342.80316535942256451 - offset, 19628009.74438977241516113 + offs
 # hondo = 100 X 100 grids
 hondo = False
 hondo2 = False
-fitty = False
+fitty = True
 
 #DIS
 Lx = 8000. + 160
@@ -52,8 +54,8 @@ south_to_north = np.linspace(100,60,nrow)
 ibound = np.ones((nlay, nrow, ncol), dtype=np.int32)
 ibound[:, 0, :] = -1
 ibound[:, -1, :] = -1
-ibound[:, :, 0] = -1 # left side
-ibound[:, :, -1] = -1 # right side
+# ibound[:, :, 0] = -1 # left side
+# ibound[:, :, -1] = -1 # right side
 strt = np.ones((nlay, nrow, ncol), dtype=np.float32)*ztop
 strt[:, :, :] = 100
 strt[:, 0, :] = 100.
@@ -74,16 +76,16 @@ bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=strt)
 bas.export(os.path.join('grid','bas.shp'))
 shutil.copy(os.path.join('grid','grid.prj'),os.path.join('grid','bas.prj'))
 
-# ghb_spd = {}
-# spd = []
-# for row in range(nrow):
-#     stage = strt[0][row,0]
-#     spd.append([0,row,0,stage,500])
-#     spd.append([0,row,ncol-1,stage,500])
-#
-#
-# ghb_spd[0] = spd
-# ghb = flopy.modflow.ModflowGhb(mf,stress_period_data=ghb_spd,ipakcb=53)
+chd_spd = {}
+spd = []
+for row in range(nrow):
+    stage = strt[0][row,0]
+    spd.append([0,row,0,stage,stage])
+    spd.append([0,row,ncol-1,stage,stage])
+
+
+chd_spd[0] = spd
+chd = flopy.modflow.ModflowChd(mf,stress_period_data=chd_spd,ipakcb=53)
 
 #LPF change hydraulic conductivity here
 
@@ -111,6 +113,8 @@ for sp in range(nper):
 oc = flopy.modflow.ModflowOc(mf, stress_period_data=spd, compact=True)
 
 pcg = flopy.modflow.ModflowPcg(mf)
+
+# sip = flopy.modflow.ModflowSip(mf)
 
 # WEL
 # well 1: 2400, 1600, 200 gpm
@@ -148,6 +152,7 @@ wells = [wel1,wel2,wel3,wel4]
 wel_spd = {0: wells, 1: wells, 2: wells, 3: wells, 4: wells, 5: wells, 6: wells, 7: wells,
            8: wells, 9: wells}
 wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd,ipakcb=53)
+
 # wel.export(os.path.join('grid','wel.shp'))
 # shutil.copy(os.path.join('grid','grid.prj'),os.path.join('grid','wel.prj'))
 
@@ -157,6 +162,8 @@ mf.write_input()
 # Run the MODFLOW model
 success, buff = mf.run_model(silent=False)
 
+cbbobj = bf.CellBudgetFile(os.path.join(model_ws,modelname+'.cbc'))
+# print(cbbobj.get_)
 
 # create contour shapefile
 headobj = bf.HeadFile(os.path.join(model_ws,modelname+'.hds'))

@@ -11,3 +11,6 @@
  Call TRACK                                                                                                                          
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
+ Exit TIME_STEP_LOOP                                                                                                                 
+ Particle tracking complete. Writing endpoint file ...                                                                               
+ End of MODPATH simulation. Normal termination.

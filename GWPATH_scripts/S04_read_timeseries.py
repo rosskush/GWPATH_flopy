@@ -2,12 +2,13 @@ import pandas as pd
 import os
 import numpy as np
 import geopandas as gpd
-from shapely.geometry import Point, MultiPoint
+from shapely.geometry import Point, MultiPoint, LineString, Polygon,MultiPolygon
 from flopy.utils.reference import SpatialReference
 import flopy.utils.binaryfile as bf
 import shutil
 import flopy
 import matplotlib.pyplot as plt
+
 pd.set_option("display.max_rows",8)
 
 model_ws = os.path.join('workspace')
@@ -48,6 +49,7 @@ print(ts[['GAMX','GAMY']].head())
 ts['geometry'] = ts.apply(lambda xy: Point(xy['GAMX'],xy['GAMY']),axis=1)
 
 gdf = gpd.GeoDataFrame(ts,geometry='geometry')
+gdf = gdf[gdf['Tracking_Time']>=3650]
 
 # gdf.to_file(os.path.join('shapefiles','ending_pt.shp'))
 # shutil.copy(os.path.join('grid','grid.prj'),os.path.join('shapefiles','ending_pt.prj'))
@@ -57,14 +59,27 @@ gdf = gpd.GeoDataFrame(ts,geometry='geometry')
 gdf = gdf[gdf['Tracking_Time']>=3650]
 points = gdf['geometry']
 point_collection = MultiPoint(list(points))
-convex_hull_polygon = point_collection.convex_hull
+# convex_hull_polygon = point_collection
+# print(convex_hull_polygon)
+#
+# chDF = pd.DataFrame({'geometry':[point_collection]})
+# ch = gpd.GeoDataFrame(chDF,geometry='geometry')
+# ch['geometry'] = ch['geometry'].convex_hull
+#
+#
 
-print(convex_hull_polygon)
+df2 = pd.DataFrame({'geometry':points,'end':'end_pt'})
+df2['geometry'] = df2['geometry'].apply(lambda x:x.coords[0])
+df2.reset_index(inplace=True,drop=True)
+df2 = df2.groupby(['end'])['geometry'].apply(lambda x: Polygon(x.tolist()))
+gdf2 = gpd.GeoDataFrame(df2,geometry='geometry')
 
-chDF = pd.DataFrame({'geometry':[convex_hull_polygon]})
 
-ch = gpd.GeoDataFrame(chDF,geometry='geometry')
-ch.to_file(os.path.join('shapefiles','convex.shp'))
+gdf2.to_file(os.path.join('shapefiles','convex.shp'))
 shutil.copy(os.path.join('grid','grid.prj'),os.path.join('shapefiles','convex.prj'))
 
+
+gdf2.plot()
+
+plt.show()
 

@@ -24,6 +24,7 @@ for png in pngs:
     arr = np.array(imageio.imread(os.path.join(png_ws,png)))
     nrow, ncol, bands = arr.shape
     transform = rasterio.transform.from_bounds(xul,yul-8000,xul+8000,yul,width=ncol, height=nrow)
+    print(transform)
     new_dataset = rasterio.open(os.path.join(tiff_ws,tiff), 'w', driver='GTiff',
                                 height = arr.shape[0], width = arr.shape[1],
                                 count=1, crs=proj4,dtype=(arr.dtype),

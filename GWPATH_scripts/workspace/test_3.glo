@@ -20,6 +20,10 @@
  FILE TYPE:BAS6   UNIT   13   STATUS:OLD    
  FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
 
+ OPENING test_3.chd
+ FILE TYPE:CHD   UNIT   24   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
  OPENING test_3.lpf
  FILE TYPE:LPF   UNIT   15   STATUS:OLD    
  FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
@@ -160,3 +164,6 @@
 
 
      0 Well parameters
+
+
+     0 TIME-VARIANT SPECIFIED-HEAD PARAMETERS
