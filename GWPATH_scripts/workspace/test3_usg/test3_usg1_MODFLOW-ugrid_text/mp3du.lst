@@ -1,0 +1,17 @@
+                                  MODFLOW-USGMF-USG 1.0
+      ADVANCED VERSION WITH FURTHER DEVELOPMENTS
+                         VERSION 6.0.01  August 24, 2012
+
+ LIST FILE: mp3du.lst
+                         UNIT    1
+
+ OPENING "test3_usg1.hed"
+ FILE TYPE:DATA(BINARY)   UNIT    2   STATUS:UNKNOWN
+ FORMAT:BINARY                 ACCESS:SEQUENTIAL          
+
+ *** ERROR OPENING FILE ""test3_usg1.hed"" ON UNIT     2
+       SPECIFIED FILE STATUS: UNKNOWN
+       SPECIFIED FILE FORMAT: BINARY              
+       SPECIFIED FILE ACCESS: SEQUENTIAL          
+       SPECIFIED FILE ACTION: READWRITE           
+  -- STOP EXECUTION (SGWF2BAS7OPEN)

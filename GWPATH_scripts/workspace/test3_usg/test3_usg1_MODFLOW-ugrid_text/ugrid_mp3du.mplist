@@ -1,0 +1,32 @@
+
+mod-PATH3DU 
+S.S. PAPADOPULOS & ASSOC. INC. PARTICLE TRACKING MODEL FOR MODFLOW-USG
+Based, in part, on the framework of:
+
+MODPATH - Version 6.0.01  August 24, 2012                 
+U.S. GEOLOGICAL SURVEY PARTICLE TRACKING MODEL FOR MODFLOW
+
+Simulation File: ugrid_mp3du.mpsim                                                                                                                                                                                       
+ #MPSIM mod-PATH3DU Simulation File
+ #AutoComputeReferenceTime=1
+ #UseStepError=1
+  
+--------------------------------------------
+Allocating and reading data for grid  1
+--------------------------------------------
+
+ OPENING test3_usg1.mfn
+ FILE TYPE:MFNAM   UNIT   13   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING test3_usg1.gsf
+ FILE TYPE:GSF   UNIT   14   STATUS:UNKNOWN
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING ugrid_mp3du.mpbas
+ FILE TYPE:MPBAS   UNIT   15   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING ugrid_mp3du.mp3du
+ FILE TYPE:MP3DU   UNIT   16   STATUS:UNKNOWN
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          

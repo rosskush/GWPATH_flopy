@@ -1,0 +1,42 @@
+[
+	{
+		"Program Information" : 
+		{
+			"Developer" : "S.S. Papadopulos & Assoc. Inc.",
+			"Title" : "writeP3DGSF",
+			"Version" : 
+			{
+				"Date" : "01/2018",
+				"Number" : "1.0.0"
+			}
+		}
+	},
+	{
+		"Timing" : 
+		{
+			"Elapsed" : 
+			{
+				"minutes" : 1.56215231e+000,
+				"seconds" : 9.37291389e+001
+			},
+			"Finished" : "Wed Aug 29 15:51:42 2018\n",
+			"Started" : "Wed Aug 29 15:50:08 2018\n"
+		}
+	},
+	null,
+	{
+		"Flow Model" : "N/A"
+	},
+	{
+		"Warning(s)" : null
+	},
+	{
+		"Error(s)" : 
+		[
+			{
+				"Message" : "There is a problem with the JSON formatting of the input file (test3_usg1.gsf)",
+				"Possible Action(s)" : "Typically this is due to unbalanced parentheses i.e. [}, or a comma in the wrong spot (or missing). Check file and try again."
+			}
+		]
+	}
+]

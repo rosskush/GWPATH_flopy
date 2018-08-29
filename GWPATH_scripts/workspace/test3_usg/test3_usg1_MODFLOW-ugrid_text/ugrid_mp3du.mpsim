@@ -1,0 +1,11 @@
+#MPSIM mod-PATH3DU Simulation File
+#AutoComputeReferenceTime=1
+#UseStepError=1
+ugrid_mp3du.mpnam
+ugrid_mp3du.mplist
+2	2	1	1	1	2	2	1	1	1	1	1
+ugrid_mp3du.ept
+ugrid_mp3du.ptl
+1.0
+ugrid_mp3du.ptr
+0
