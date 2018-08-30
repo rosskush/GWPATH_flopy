@@ -1,0 +1,4 @@
+#GMS_HDF5_01
+4 40 AUX IFACE AUX QFACT AUX CELLGRP
+         4         0         0
+GMS_HDF5_01 "test3_usg1.h5" "Well" 1

@@ -1,0 +1,393 @@
+                                  MODFLOW-USG      
+      U.S. GEOLOGICAL SURVEY MODULAR FINITE-DIFFERENCE GROUNDWATER FLOW MODEL
+                            VERSION 1.3.00 12/01/2015
+
+ LIST FILE: test3_usg1.out  
+                         UNIT    1
+
+ OPENING "test3_usg1.hed"
+ FILE TYPE:DATA(BINARY)   UNIT    2   STATUS:UNKNOWN
+ FORMAT:BINARY                 ACCESS:SEQUENTIAL          
+
+ OPENING "test3_usg1.ccf"
+ FILE TYPE:DATA(BINARY)   UNIT   40   STATUS:UNKNOWN
+ FORMAT:BINARY                 ACCESS:SEQUENTIAL          
+#                                                                                                                                                                                                                                                                                                           
+# Global Input Files                                                                                                                                                                                                                                                                                        
+
+ OPENING "test3_usg1.disu"
+ FILE TYPE:DISU   UNIT    3   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+#                                                                                                                                                                                                                                                                                                           
+# Flow Process Input Files                                                                                                                                                                                                                                                                                  
+
+ OPENING "test3_usg1.ba6"
+ FILE TYPE:BAS6   UNIT    4   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING "test3_usg1.lpf"
+ FILE TYPE:LPF   UNIT    7   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING "test3_usg1.oc"
+ FILE TYPE:OC   UNIT    8   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING "test3_usg1.wel"
+ FILE TYPE:WEL   UNIT    9   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING "test3_usg1.chd"
+ FILE TYPE:CHD   UNIT   10   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING "test3_usg1.sms"
+ FILE TYPE:SMS   UNIT   11   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING "test3_usg1.gnc"
+ FILE TYPE:GNC   UNIT   12   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ BAS -- BASIC PACKAGE-USG      1.3.00 12/01/2015                        INPUT READ FROM UNIT    4
+ 
+ #GMS MODFLOW Simulation                                                         
+ #29 August 2018                                                                 
+ THE FREE FORMAT OPTION HAS BEEN SELECTED
+ THE UNSTRUCTURED GRID OPTION HAS BEEN SELECTED
+
+ DIS -- UNSTRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 1 : 5/17/2010 - INPUT READ FROM UNIT    3
+ # MF2K UNSTRUCTURED DISCRETIZATION FILE
+ #
+       1575 NODES         1 NLAY     10707 NJAG  VERT. SUBDISCRETIZATION INDEX, IVSD = -1
+ INDEX FOR INPUT OF UNSTRUCTURED, FINITE-VOLUME CONNECTIVITY INFORMATION, IDSYMRD =   0
+    1 STRESS PERIOD(S) IN SIMULATION
+ MODEL TIME UNIT IS DAYS
+ MODEL LENGTH UNIT IS FEET
+  Confining bed flag for each layer:
+   0
+
+ GNCn -- GHOST NODE CORRECTION PACKAGE WITH n ADJACENT CONTRIBUTING NODES VERSION 1, 6/18/2011.
+   INPUT READ FROM UNIT   12
+     0 PARAMETERS DEFINE A MAXIMUM OF      0 GHOST NODE CORRECTION LOCATIONS
+      0 GHOST NODE CORRECTION LOCATIONS NOT DEFINED BY PARAMETERS
+  MAXIMUM NUMBER OF ADJACENT CONTRIBUTING NODES =      1
+  FLAG INDICATING SECOND-ORDER CORRECTION ON TRANSMISSIVITY TERM FOR UNCONFINED FLOW, I2Kn =      0
+  FLAG FOR SYMMETRIC IMPLEMENTATION OF GNCn, ISYMGNCn =      1
+  FLAG FOR INPUT OF SATURATED CONDUCTANCES, IFLALPHAn =      0
+
+
+     0 GNC parameters
+
+      0 GHOST NODES NOT DEFINED BY PARAMETERS
+
+      0 GNC CELLS
+
+ DIS -- UNSTRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 1 : 5/17/2010 - INPUT READ FROM UNIT    3
+
+   NO. OF NODES PER LAYER =      1575
+
+                      TOP =   150.000     FOR LAYER   1
+
+                      BOT =   0.00000     FOR LAYER   1
+
+
+
+                               AREA FOR LAYER   1
+ READING ON UNIT    3 WITH FORMAT: (FREE)              
+
+
+
+                                 IA
+ READING ON UNIT    3 WITH FORMAT: (FREE)              
+
+
+
+                                 JA
+ READING ON UNIT    3 WITH FORMAT: (FREE)              
+
+
+
+               CONNECTION LENGTH 12 FOR LAYER   1
+ READING ON UNIT    3 WITH FORMAT: (FREE)              
+
+
+
+                 PERPENDICULAR AREA
+ READING ON UNIT    3 WITH FORMAT: (FREE)              
+
+
+ STRESS PERIOD     LENGTH       TIME STEPS     MULTIPLIER FOR DELT    SS FLAG
+ ----------------------------------------------------------------------------
+        1         1.000000          1                    1.000         SS
+
+ STEADY-STATE SIMULATION
+
+
+
+
+ AQUIFER HEAD WILL BE SET TO  -999.00     AT ALL NO-FLOW NODES (IBOUND=0).
+
+ OUTPUT CONTROL IS SPECIFIED ONLY AT TIME STEPS FOR WHICH OUTPUT IS DESIRED
+ COMPACT CELL-BY-CELL BUDGET FILES WILL BE WRITTEN
+ AUXILIARY DATA WILL BE SAVED IN CELL-BY-CELL BUDGET FILES
+ HEAD PRINT FORMAT CODE IS   0    DRAWDOWN PRINT FORMAT CODE IS   0
+ HEADS WILL BE SAVED ON UNIT    2    DRAWDOWNS WILL BE SAVED ON UNIT    0
+
+ LPF -- LAYER-PROPERTY FLOW PACKAGE, VERSION 7, 5/2/2005
+         INPUT READ FROM UNIT    7
+ CELL-BY-CELL FLOWS WILL BE SAVED ON UNIT   40
+ HEAD AT CELLS THAT CONVERT TO DRY=  -888.00    
+ No named parameters
+ IKCFLAG=0, NODAL INPUT OF HY AND CV
+
+   LAYER FLAGS:
+ LAYER       LAYTYP        LAYAVG         CHANI        LAYVKA        LAYWET
+ ---------------------------------------------------------------------------
+    1             0             0    -1.000E+00             1             0
+
+   INTERPRETATION OF LAYER FLAGS:
+                        INTERBLOCK     HORIZONTAL    DATA IN
+         LAYER TYPE   TRANSMISSIVITY   ANISOTROPY   ARRAY VKA   WETTABILITY
+ LAYER      (LAYTYP)      (LAYAVG)       (CHANI)      (LAYVKA)      (LAYWET)
+ ---------------------------------------------------------------------------
+    1      CONFINED      HARMONIC      VARIABLE    ANISOTROPY  NON-WETTABLE
+
+ WETTING CAPABILITY IS NOT ACTIVE IN ANY LAYER
+
+ WEL -- WELL PACKAGE, VERSION 7, 5/2/2005 INPUT READ FROM UNIT    9
+ #GMS_HDF5_01
+ No named parameters
+ MAXIMUM OF      4 ACTIVE WELLS AT ONE TIME
+ CELL-BY-CELL FLOWS WILL BE SAVED ON UNIT   40
+ MAXIMUM NUMBER OF ACTIVE WELLS (MXACTW) =      4
+ C-B-C FLUX FLAG OR UNIT NUMBER (IWELCB) = 40
+ AUXILIARY WELL VARIABLE: IFACE           
+ AUXILIARY WELL VARIABLE: QFACT           
+ AUXILIARY WELL VARIABLE: CELLGRP         
+
+
+     0 Well parameters
+
+ CHD -- TIME-VARIANT SPECIFIED-HEAD OPTION, VERSION 7, 5/2/2005
+ INPUT READ FROM UNIT   10
+ #GMS_HDF5_01
+ No named parameters
+ MAXIMUM OF     79 TIME-VARIANT SPECIFIED-HEAD CELLS AT ONE TIME
+ AUXILIARY CHD VARIABLE: SHEADFACT       
+ AUXILIARY CHD VARIABLE: EHEADFACT       
+ AUXILIARY CHD VARIABLE: CELLGRP         
+
+
+     0 TIME-VARIANT SPECIFIED-HEAD PARAMETERS
+
+ SMS -- SPARSE MATRIX SOLVER PACKAGE, VERSION 7, 5/2/2005
+         INPUT READ FROM UNIT 11
+ No named parameters
+ SIMPLE OPTION:
+ DEFAULT SOLVER INPUT VALUES FOR FAST SOLUTIONS
+ OUTER ITERATION CONVERGENCE CRITERION (HCLOSE) =    0.100000E-01
+ INNER ITERATION CONVERGENCE CRITERION (HICLOSE) =    0.100000E+00
+ MAXIMUM NUMBER OF OUTER ITERATIONS (MXITER)     =       500
+ MAXIMUM NUMBER OF INNER ITERATIONS (ITER1)      =       100
+ SOLVER PRINTOUT INDEX             (IPRSMS)      =         0
+ NONLINEAR ITERATION METHOD    (NONLINMETH)      =         0
+ LINEAR SOLUTION METHOD           (LINMETH)      =         2
+ ***Picard Linearization will be used***
+ 
+ ***PCGU linear solver will be used***
+
+ PCGU -- UNSTRUCTURED CONJUGATE-GRADIENT SOLUTION PACKAGE, VERSION 7.02, 08/13/2013
+
+              SOLUTION BY THE CONJUGATE-GRADIENT METHOD
+ ------------------------------------------------------------------
+ MAXIMUM OF    500 CALLS OF SOLUTION ROUTINE
+ MAXIMUM OF    100 INTERNAL ITERATIONS PER CALL TO SOLUTION ROUTINE
+ LINEAR ACCELERATION METHOD            = CG        
+ MATRIX PRECONDITIONING TYPE           = INCOMPLETE LU       
+ MATRIX SCALING APPROACH               = NO SCALING          
+ MATRIX REORDERING APPROACH            = ORIGINAL ORDERING        
+ HEAD CHANGE CRITERION FOR CLOSURE     =    0.10000E+00
+ RESIDUAL CHANGE CRITERION FOR CLOSURE =    0.10000E+00
+ RELAXATION FACTOR                     =    0.00000E+00
+  ONLY USED WITH MILU0 PRECONDITIONER
+
+
+ 
+1
+                            STRESS PERIOD NO.    1, LENGTH =   1.000000    
+                            -----------------------------------------------
+
+                              NUMBER OF TIME STEPS =     1
+
+                               MULTIPLIER FOR DELT =     1.000
+
+                            INITIAL TIME STEP SIZE =   1.000000    
+
+ WEL -- WELL PACKAGE, VERSION 7, 5/2/2005 INPUT READ FROM UNIT    9
+
+ WELL NO.      NODE       STRESS FACTOR         IFACE           QFACT           CELLGRP         
+ -----------------------------------------------------------------------------------------------
+      1        1086     -0.3850E+05       0.000           1.000           1.000    
+      2         320      -7700.           0.000           1.000           2.000    
+      3         821     -0.9625E+05       0.000           1.000           3.000    
+      4         995     -0.5775E+05       0.000           1.000           4.000    
+
+      4 WELLS
+
+ CHD -- TIME-VARIANT SPECIFIED-HEAD OPTION, VERSION 7, 5/2/2005
+ INPUT READ FROM UNIT   10
+
+ CHD NO.        NODE           START HEAD        END HEAD         SHEADFACT       EHEADFACT       CELLGRP         
+ -----------------------------------------------------------------------------------------------------------------
+      1           6       100.0           100.0           0.000           0.000          -1.000    
+      2          66       100.0           100.0           0.000           0.000          -1.000    
+      3         114       100.0           100.0           0.000           0.000          -1.000    
+      4         145       100.0           100.0           0.000           0.000          -1.000    
+      5         172       100.0           100.0           0.000           0.000          -1.000    
+      6         206       100.0           100.0           0.000           0.000          -1.000    
+      7         249       100.0           100.0           0.000           0.000          -1.000    
+      8         306       100.0           100.0           0.000           0.000          -1.000    
+      9         335       100.0           100.0           0.000           0.000          -1.000    
+     10         383       100.0           100.0           0.000           0.000          -1.000    
+     11         432       100.0           100.0           0.000           0.000          -1.000    
+     12         470       100.0           100.0           0.000           0.000          -1.000    
+     13         498       100.0           100.0           0.000           0.000          -1.000    
+     14         538       100.0           100.0           0.000           0.000          -1.000    
+     15         592       100.0           100.0           0.000           0.000          -1.000    
+     16         617       100.0           100.0           0.000           0.000          -1.000    
+     17         650       100.0           100.0           0.000           0.000          -1.000    
+     18         691       100.0           100.0           0.000           0.000          -1.000    
+     19         723       100.0           100.0           0.000           0.000          -1.000    
+     20         760       100.0           100.0           0.000           0.000          -1.000    
+     21         799       100.0           100.0           0.000           0.000          -1.000    
+     22         846       100.0           100.0           0.000           0.000          -1.000    
+     23         891       100.0           100.0           0.000           0.000          -1.000    
+     24         936       100.0           100.0           0.000           0.000          -1.000    
+     25         979       100.0           100.0           0.000           0.000          -1.000    
+     26        1028       100.0           100.0           0.000           0.000          -1.000    
+     27        1055       100.0           100.0           0.000           0.000          -1.000    
+     28        1101       100.0           100.0           0.000           0.000          -1.000    
+     29        1149       100.0           100.0           0.000           0.000          -1.000    
+     30        1186       100.0           100.0           0.000           0.000          -1.000    
+     31        1234       100.0           100.0           0.000           0.000          -1.000    
+     32        1262       100.0           100.0           0.000           0.000          -1.000    
+     33        1296       100.0           100.0           0.000           0.000          -1.000    
+     34        1338       100.0           100.0           0.000           0.000          -1.000    
+     35        1376       100.0           100.0           0.000           0.000          -1.000    
+     36        1428       100.0           100.0           0.000           0.000          -1.000    
+     37        1482       100.0           100.0           0.000           0.000          -1.000    
+     38        1524       100.0           100.0           0.000           0.000          -1.000    
+     39        1573       100.0           100.0           0.000           0.000          -1.000    
+     40           3       60.00           60.00           0.000           0.000          -1.000    
+     41          15       60.00           60.00           0.000           0.000          -1.000    
+     42          64       60.00           60.00           0.000           0.000          -1.000    
+     43          97       60.00           60.00           0.000           0.000          -1.000    
+     44         131       60.00           60.00           0.000           0.000          -1.000    
+     45         193       60.00           60.00           0.000           0.000          -1.000    
+     46         219       60.00           60.00           0.000           0.000          -1.000    
+     47         243       60.00           60.00           0.000           0.000          -1.000    
+     48         290       60.00           60.00           0.000           0.000          -1.000    
+     49         346       60.00           60.00           0.000           0.000          -1.000    
+     50         361       60.00           60.00           0.000           0.000          -1.000    
+     51         394       60.00           60.00           0.000           0.000          -1.000    
+     52         448       60.00           60.00           0.000           0.000          -1.000    
+     53         490       60.00           60.00           0.000           0.000          -1.000    
+     54         528       60.00           60.00           0.000           0.000          -1.000    
+     55         581       60.00           60.00           0.000           0.000          -1.000    
+     56         641       60.00           60.00           0.000           0.000          -1.000    
+     57         688       60.00           60.00           0.000           0.000          -1.000    
+     58         736       60.00           60.00           0.000           0.000          -1.000    
+     59         789       60.00           60.00           0.000           0.000          -1.000    
+     60         815       60.00           60.00           0.000           0.000          -1.000    
+     61         851       60.00           60.00           0.000           0.000          -1.000    
+     62         895       60.00           60.00           0.000           0.000          -1.000    
+     63         947       60.00           60.00           0.000           0.000          -1.000    
+     64         996       60.00           60.00           0.000           0.000          -1.000    
+     65        1032       60.00           60.00           0.000           0.000          -1.000    
+     66        1063       60.00           60.00           0.000           0.000          -1.000    
+     67        1112       60.00           60.00           0.000           0.000          -1.000    
+     68        1150       60.00           60.00           0.000           0.000          -1.000    
+     69        1185       60.00           60.00           0.000           0.000          -1.000    
+     70        1211       60.00           60.00           0.000           0.000          -1.000    
+     71        1241       60.00           60.00           0.000           0.000          -1.000    
+     72        1298       60.00           60.00           0.000           0.000          -1.000    
+     73        1353       60.00           60.00           0.000           0.000          -1.000    
+     74        1388       60.00           60.00           0.000           0.000          -1.000    
+     75        1411       60.00           60.00           0.000           0.000          -1.000    
+     76        1458       60.00           60.00           0.000           0.000          -1.000    
+     77        1510       60.00           60.00           0.000           0.000          -1.000    
+     78        1571       60.00           60.00           0.000           0.000          -1.000    
+     79        1575       60.00           60.00           0.000           0.000          -1.000    
+
+
+     79 TIME-VARIANT SPECIFIED-HEAD CELLS
+ 
+ SOLVING FOR HEAD 
+
+ Outer-Iteration  Inner-Iteration    Maximum Head Change  Maximum Head Change
+     Number           Count               Value              Location
+        1               39               -100.93                   821           GWF-node number
+        2                1              -0.26459E-04              1558           GWF-node number
+
+
+     2 CALLS TO SPARSE MATRIX SOLVER PACKAGE  IN FLOW TIME STEP   1 STRESS PERIOD   1
+
+ TOTAL OF       2OUTER ITERATIONS
+  MAXIMUM CHANGE FOR EACH ITERATION:
+   MAX. CHANGE        NODE  MAX. CHANGE        NODE  MAX. CHANGE        NODE  MAX. CHANGE        NODE  MAX. CHANGE        NODE
+ ------------------------------------------------------------------------------------------------------------------------------------
+   -100.93    ,        821 -0.26459E-04,       1558
+
+ OUTPUT CONTROL FOR STRESS PERIOD        1   TIME STEP        1
+    PRINT BUDGET
+    SAVE HEAD FOR ALL LAYERS
+    SAVE BUDGET
+ UBDSV2U SAVING "   CONSTANT HEAD" ON UNIT  40 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV1U SAVING "   FLOW JA FACE " ON UNIT  40 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV4U SAVING "           WELLS" ON UNIT  40 AT TIME STEP      1, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT    2 AT END OF TIME STEP   1, STRESS PERIOD    1
+1
+  VOLUMETRIC BUDGET FOR ENTIRE MODEL AT END OF TIME STEP       1 IN STRESS PERIOD       1
+  ---------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUMES      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+             STORAGE =           0.0000               STORAGE =           0.0000
+       CONSTANT HEAD =      234582.0694         CONSTANT HEAD =      234582.0694
+               WELLS =           0.0000                 WELLS =           0.0000
+
+            TOTAL IN =      234582.0694              TOTAL IN =      234582.0694
+
+          OUT:                                     OUT:
+          ----                                     ----
+             STORAGE =           0.0000               STORAGE =           0.0000
+       CONSTANT HEAD =       34382.0647         CONSTANT HEAD =       34382.0647
+               WELLS =      200200.0000                 WELLS =      200200.0000
+
+           TOTAL OUT =      234582.0647             TOTAL OUT =      234582.0647
+
+            IN - OUT =       4.6958E-03              IN - OUT =       4.6958E-03
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+
+
+          TIME SUMMARY AT END OF TIME STEP         1 IN STRESS PERIOD         1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
+ STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
+         TOTAL TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
+1
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2018/08/29 15:49:11
+ Elapsed run time:  0.116 Seconds
+

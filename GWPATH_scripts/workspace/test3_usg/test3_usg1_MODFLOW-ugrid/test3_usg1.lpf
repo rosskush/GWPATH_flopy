@@ -1,0 +1,10 @@
+40 -888.0 0 0
+0 
+0 
+-1.0 
+1 
+0 
+HDF5 1.0 -1 "test3_usg1.h5" "Arrays/ANGLEX" 1 0 10707
+HDF5 1.0 -1 "test3_usg1.h5" "Arrays/HK1" 1 0 1575
+HDF5 1.0 -1 "test3_usg1.h5" "Arrays/HANI1" 1 0 1575
+HDF5 1.0 -1 "test3_usg1.h5" "Arrays/VANI1" 1 0 1575

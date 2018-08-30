@@ -1,0 +1,5 @@
+#MPNAM mod-PATH3DU Name File                      #  0.  [HEADER]
+MFNAM          13 test3_usg1_bak.mfn              #  1.  MFNAM - MODFLOW-USG NAM file
+GSF            14 test3_usg1_bak.gsf              #  1.  GSF - Grid specification file
+MPBAS          15 ugrid_mp3du.mpbas               #  1.  MPBAS - mod-PATH3DU basic data file
+MP3DU          16 ugrid_mp3du.mp3du               #  1.  MP3DU - mod-PATH3DU settings file

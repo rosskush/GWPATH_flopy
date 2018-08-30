@@ -1,0 +1,6 @@
+#GMS MODFLOW Simulation
+#29 August 2018
+FREE
+HDF5 1.0 -1 "test3_usg1_bak.h5" "Arrays/ibound1" 1 0 1575
+-999.0
+HDF5 1.0 -1 "test3_usg1_bak.h5" "Arrays/StartHead1" 1 0 1575

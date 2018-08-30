@@ -1,0 +1,19 @@
+# MF2K NAME file
+#
+# MODFLOW USG
+# Output Files
+LIST            1 "test3_usg1.out"
+DATA(BINARY)    2 "test3_usg1.hed"
+DATA(BINARY)   40 "test3_usg1.ccf"
+#
+# Global Input Files
+DISU            3 "test3_usg1.disu"
+#
+# Flow Process Input Files
+BAS6            4 "test3_usg1.ba6"
+LPF             7 "test3_usg1.lpf"
+OC              8 "test3_usg1.oc"
+WEL             9 "test3_usg1.wel"
+CHD            10 "test3_usg1.chd"
+SMS            11 "test3_usg1.sms"
+GNC            12 "test3_usg1.gnc"

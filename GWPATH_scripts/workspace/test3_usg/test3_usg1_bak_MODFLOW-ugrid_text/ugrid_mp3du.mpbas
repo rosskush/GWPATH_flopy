@@ -1,0 +1,4 @@
+#MPBAS mod-PATH3DU Basic Package                  #  0.  [HEADER]
+0                                                 #  1.  DefaultIFACECount
+CONSTANT 0.25                                     #  4.  Porosity
+CONSTANT 2                                        #  5.  MTH
